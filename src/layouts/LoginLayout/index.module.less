@@ -1,0 +1,51 @@
+.app {
+  text-align: center;
+  .app-header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    input {
+      text-align: center;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 4px 8px;
+      font-size: calc(12px + 1vmin);
+    }
+    input::placeholder {
+      color: #ddd;
+    }
+    input:focus-visible {
+      outline: none;
+    }
+  }
+  .app-logo {
+    height: 20vmin;
+    pointer-events: none;
+  }
+  .app-link {
+    color: #61dafb;
+    font-size: calc(10px + 1vmin);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .app-logo {
+    animation: app-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes app-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+button {
+  font-size: calc(10px + 2vmin);
+}

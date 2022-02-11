@@ -276,11 +276,6 @@
     "estree-walker" "^2.0.1"
     "picomatch" "^2.2.2"
 
-"@types/less@^3.0.3":
-  "integrity" "sha512-1YXyYH83h6We1djyoUEqTlVyQtCfJAFXELSKW2ZRtjHD4hQ82CC4lvrv5D0l0FLcKBaiPbXyi3MpMsI9ZRgKsw=="
-  "resolved" "https://registry.npmmirror.com/@types/less/-/less-3.0.3.tgz"
-  "version" "3.0.3"
-
 "@types/node@^17.0.17":
   "integrity" "sha512-e8PUNQy1HgJGV3iU/Bp2+D/DXh3PYeyli8LgIwsQcs1Ar1LoaWHSIT6Rw+H2rNJmiq6SNWiDytfx8+gYj7wDHw=="
   "resolved" "https://registry.npmmirror.com/@types/node/-/node-17.0.17.tgz"

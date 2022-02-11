@@ -5,14 +5,6 @@ import Home from '@/pages/home'
 import NotFound from '@/pages/notFound'
 const routes: RouteObject[] = [
   {
-    path: '/login',
-    element: <LoginLayout />
-  },
-  {
-    path: '/register',
-    element: <LoginLayout />
-  },
-  {
     path: '/',
     element: <HomeLayout />,
     children: [
@@ -25,6 +17,14 @@ const routes: RouteObject[] = [
         element: <Home />
       }
     ]
+  },
+  {
+    path: '/login',
+    element: <LoginLayout />
+  },
+  {
+    path: '/register',
+    element: <LoginLayout />
   },
   { path: '*', element: <NotFound /> },
 ]

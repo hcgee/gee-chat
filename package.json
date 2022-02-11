@@ -1,7 +1,8 @@
 {
-  "name": "app",
+  "name": "gee-blog",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://gee-blog.github.io/hcgee",
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit --skipLibCheck && vite build",

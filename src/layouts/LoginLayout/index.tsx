@@ -17,7 +17,7 @@ const LoginLayout = () => {
     <div className={styles.app}>
       <header className={styles["app-header"]}>
         <img src={logo} className={styles["app-logo"]} alt="logo" />
-        <p>Hello Vite + React!</p>
+        <p>Hello Welcome Gee Blog！</p>
         <input type="text" placeholder="Enter your username" onChange={e => setUsername(e.target.value)} />
         <p>
           <button disabled={!username} type="button" onClick={() => goHome()}>

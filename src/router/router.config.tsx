@@ -1,32 +1,33 @@
-import { RouteObject } from 'react-router-dom'
-import LoginLayout from '@/layouts/LoginLayout'
-import HomeLayout from '@/layouts/HomeLayout'
-import Home from '@/pages/home'
-import NotFound from '@/pages/notFound'
+import { lazy } from "react";
+import { RouteObject } from "react-router-dom";
+const LoginLayout = lazy(() => import("@/layouts/LoginLayout"));
+const HomeLayout = lazy(() => import("@/layouts/HomeLayout"));
+const Home = lazy(() => import("@/pages/home"));
+const NotFound = lazy(() => import("@/pages/notFound"));
 const routes: RouteObject[] = [
   {
-    path: '/',
+    path: "/",
     element: <HomeLayout />,
     children: [
       {
         index: true,
-        element: <Home />
+        element: <Home />,
       },
       {
-        path: '/home',
-        element: <Home />
-      }
-    ]
+        path: "/home",
+        element: <Home />,
+      },
+    ],
   },
   {
-    path: '/login',
-    element: <LoginLayout />
+    path: "/login",
+    element: <LoginLayout />,
   },
   {
-    path: '/register',
-    element: <LoginLayout />
+    path: "/register",
+    element: <LoginLayout />,
   },
-  { path: '*', element: <NotFound /> },
-]
+  { path: "*", element: <NotFound /> },
+];
 
-export default routes
+export default routes;

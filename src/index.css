@@ -7,6 +7,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -32,4 +36,29 @@ button:hover {
 
 button:disabled {
   background-color: rgb(156, 153, 153);
+}
+
+input {
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: calc(12px + 1vmin);
+}
+input::placeholder {
+  color: #ddd;
+}
+input:focus-visible {
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: #ddd;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #b8c7c6;
+  border-radius: 10px;
 }

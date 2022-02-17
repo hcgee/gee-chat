@@ -16,25 +16,11 @@ const LoginLayout = () => {
   return (
     <div className={styles.app}>
       <header className={styles["app-header"]}>
-        <img src={logo} className={styles["app-logo"]} alt="logo" />
-        <p>Hello Welcome Gee Blog！</p>
         <input type="text" placeholder="Enter your username" onChange={e => setUsername(e.target.value)} />
         <p>
           <button disabled={!username} type="button" onClick={() => goHome()}>
             GO
           </button>
-        </p>
-        <p>
-          <a
-            className={styles["app-link"]}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => {
-              setTheme(theme === 'white' ? 'black' : 'white')
-            }}
-          >
-            {theme}
-          </a>
         </p>
       </header>
     </div>

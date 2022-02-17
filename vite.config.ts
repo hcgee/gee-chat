@@ -4,9 +4,14 @@ import { resolve } from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base:'./',
+  base: "./",
+  server: {
+    open: true,
+    port: 8999,
+    strictPort: true,
+  },
   build: {
-    outDir: './docs'
+    outDir: "./docs",
   },
   plugins: [react()],
   resolve: {
@@ -18,9 +23,8 @@ export default defineConfig({
     preprocessorOptions: {
       less: {
         javascriptEnabled: true,
-        modifyVars: {
-        }
-      }
-    }
-  }
+        modifyVars: {},
+      },
+    },
+  },
 });

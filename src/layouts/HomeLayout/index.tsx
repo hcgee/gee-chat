@@ -1,48 +1,59 @@
 import React, { useEffect, useContext, useState } from "react";
 import { useNavigate, Outlet } from "react-router-dom";
 import { getLocalStorage, setLocalStorage } from "@/utils";
-import { ThemeContext, themes } from "@/context/theme";
+import default_image from "@/assets/head.jpg";
+import Contact from "@/components/Contact";
+import Chat from "@/components/Chat";
 import styles from "./index.module.less";
 
 const HomeLayout = () => {
   const navigate = useNavigate();
-  const token = getLocalStorage("token");
-  const [themeStyle, setThemeStyle] = useState(useContext(ThemeContext));
-  const [theme, setTheme] = useState<any>(themes.light);
-
-  useEffect(() => {
-    if (!token) {
-      navigate("/login");
-    }
-  }, []);
   const logout = () => {
     setLocalStorage("token", "");
     navigate("/login");
   };
   return (
-    <div style={theme} className={styles["home-wrapper"]}>
+    <div className={styles.wrapper}>
       <header>
-        <p>{`Welcome, ${token}！`}</p>
-        <p>
-          <button
-            onClick={() => {
-              logout();
-            }}
-          >
-            logout
-          </button>
-        </p>
-        <p>
-          <button
-            onClick={() => {
-              setTheme(theme === themes.dark ? themes.light : themes.dark);
-            }}
-          >
-            点击切换主题
-          </button>
-        </p>
+        <button
+          onClick={() => {
+            logout();
+          }}
+        >
+          logout
+        </button>
       </header>
-      <Outlet />
+      <div className={styles.content}>
+        <div className={styles.contact}>
+          <input type="text" placeholder="搜索联系人" />
+          <Contact />
+          <Contact />
+          <Contact />
+          <Contact />
+        </div>
+        <div className={styles.chat}>
+          <div className={styles.chatMessage}>
+            <Chat isme />
+            <Chat />
+            <Chat isme />
+            <Chat />
+            <Chat isme />
+            <Chat />
+            <Chat isme />
+            <Chat />
+            <Chat />
+            <Chat isme />
+            <Chat />
+            <Chat />
+          </div>
+          <div className={styles.chatBottom}>
+            <textarea></textarea>
+            <button>发送</button>
+          </div>
+        </div>
+        <div className={styles.online}>online</div>
+      </div>
+      <footer></footer>
     </div>
   );
 };

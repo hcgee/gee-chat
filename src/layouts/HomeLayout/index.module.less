@@ -1,42 +1,20 @@
-.wrapper {
-  header {
-    height: 44px;
-    background-color: teal;
+.container {
+  display: flex;
+  .left {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    header {
+      height: 44px;
+      background-color: #1c1c1c;
+    }
+    section {
+      height: calc(100vh - 44px);
+      background-color: #24282a;
+    }
   }
   .content {
-    height: calc(100vh - 44px);
-    display: flex;
-    padding: 20px;
-    .contact {
-      flex: 1;
-    }
-    .chat {
-      padding: 0 15px;
-      flex: 1.5;
-      
-      .chatMessage {
-        display: flex;
-        flex-direction: column;
-        height: 80%;
-        overflow-y: scroll;
-      }
-      .chatBottom {
-        display: flex;
-        flex-direction: column;
-        height: 20%;
-        margin-top: 10px;
-        textarea {
-          width: 100%;
-          height: 80px;
-        }
-        button {
-          align-self: flex-end;
-          margin-top: 6px;
-        }
-      }
-    }
-    .online {
-      flex: 1;
-    }
+    width: 80%;
+    background-color: #33373a;
   }
 }

@@ -1,5 +1,6 @@
 .app {
   text-align: center;
+  // background-color: #000;
   .app-header {
     min-height: 100vh;
     display: flex;
@@ -12,13 +13,21 @@
       border: 1px solid #ddd;
       border-radius: 6px;
       padding: 4px 8px;
-      font-size: calc(12px + 1vmin);
-    }
-    input::placeholder {
-      color: #ddd;
-    }
-    input:focus-visible {
-      outline: none;
+      font-size: calc(10px + 1vmin);
+      margin-bottom: 20px;
+      transition: 500ms all;
+      &::placeholder {
+        color: #ddd;
+        font-size: calc(10px + 1vmin);
+      }
+      &:hover {
+        border: 1px solid yellow;
+      }
+      &:focus-visible {
+        outline: none;
+        border: 1px solid yellow;
+        box-shadow: 0 0 2px yellow;
+      }
     }
   }
   .app-logo {
@@ -28,20 +37,5 @@
   .app-link {
     color: #61dafb;
     font-size: calc(10px + 1vmin);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .app-logo {
-    animation: app-logo-spin infinite 20s linear;
-  }
-}
-
-@keyframes app-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
   }
 }

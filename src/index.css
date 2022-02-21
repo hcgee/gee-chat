@@ -16,42 +16,6 @@ code {
     monospace;
 }
 
-button,
-a {
-  cursor: pointer;
-}
-
-button {
-  background-color: #0d9488;
-  border: none;
-  color: #fff;
-  font-size: calc(10px + 1vmin);
-  border-radius: 4px;
-  padding: 2px 8px;
-}
-
-button:hover {
-  background-color: #0f766e;
-}
-
-button:disabled {
-  background-color: rgb(156, 153, 153);
-}
-
-input {
-  text-align: center;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  padding: 4px 8px;
-  font-size: calc(12px + 1vmin);
-}
-input::placeholder {
-  color: #ddd;
-}
-input:focus-visible {
-  outline: none;
-}
-
 ::-webkit-scrollbar {
   width: 8px;
   background-color: #ddd;

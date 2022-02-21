@@ -4,11 +4,17 @@ import { resolve } from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "./",
+  // base: "./",
   server: {
     open: true,
-    port: 8999,
+    port: 8080,
     strictPort: true,
+    proxy: {
+      "/api": {
+        target: "http://localhost:3000",
+        changeOrigin: true,
+      },
+    },
   },
   build: {
     outDir: "./docs",

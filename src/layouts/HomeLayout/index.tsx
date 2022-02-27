@@ -26,6 +26,76 @@ const friendList: FriendObjectProps[] = [
       "https://avatars.githubusercontent.com/u/65010677?v=4",
     desc: "林俊杰（JJ Lin），1981年3月27日出生于新加坡，祖籍中国福建省厦门市同安区，华语流行乐男歌手、音乐人、潮牌主理人。",
   },
+  {
+    id: 3,
+    name: "林俊杰",
+    head_url:
+      "https://avatars.githubusercontent.com/u/65010677?v=4",
+    desc: "林俊杰（JJ Lin），1981年3月27日出生于新加坡，祖籍中国福建省厦门市同安区，华语流行乐男歌手、音乐人、潮牌主理人。",
+  },
+  {
+    id: 3,
+    name: "林俊杰",
+    head_url:
+      "https://avatars.githubusercontent.com/u/65010677?v=4",
+    desc: "林俊杰（JJ Lin），1981年3月27日出生于新加坡，祖籍中国福建省厦门市同安区，华语流行乐男歌手、音乐人、潮牌主理人。",
+  },
+  {
+    id: 3,
+    name: "林俊杰",
+    head_url:
+      "https://avatars.githubusercontent.com/u/65010677?v=4",
+    desc: "林俊杰（JJ Lin），1981年3月27日出生于新加坡，祖籍中国福建省厦门市同安区，华语流行乐男歌手、音乐人、潮牌主理人。",
+  },
+  {
+    id: 3,
+    name: "林俊杰",
+    head_url:
+      "https://avatars.githubusercontent.com/u/65010677?v=4",
+    desc: "林俊杰（JJ Lin），1981年3月27日出生于新加坡，祖籍中国福建省厦门市同安区，华语流行乐男歌手、音乐人、潮牌主理人。",
+  },
+  {
+    id: 3,
+    name: "林俊杰",
+    head_url:
+      "https://avatars.githubusercontent.com/u/65010677?v=4",
+    desc: "林俊杰（JJ Lin），1981年3月27日出生于新加坡，祖籍中国福建省厦门市同安区，华语流行乐男歌手、音乐人、潮牌主理人。",
+  },
+  {
+    id: 3,
+    name: "林俊杰",
+    head_url:
+      "https://avatars.githubusercontent.com/u/65010677?v=4",
+    desc: "林俊杰（JJ Lin），1981年3月27日出生于新加坡，祖籍中国福建省厦门市同安区，华语流行乐男歌手、音乐人、潮牌主理人。",
+  },
+  {
+    id: 3,
+    name: "林俊杰",
+    head_url:
+      "https://avatars.githubusercontent.com/u/65010677?v=4",
+    desc: "林俊杰（JJ Lin），1981年3月27日出生于新加坡，祖籍中国福建省厦门市同安区，华语流行乐男歌手、音乐人、潮牌主理人。",
+  },
+  {
+    id: 3,
+    name: "林俊杰",
+    head_url:
+      "https://avatars.githubusercontent.com/u/65010677?v=4",
+    desc: "林俊杰（JJ Lin），1981年3月27日出生于新加坡，祖籍中国福建省厦门市同安区，华语流行乐男歌手、音乐人、潮牌主理人。",
+  },
+  {
+    id: 3,
+    name: "林俊杰",
+    head_url:
+      "https://avatars.githubusercontent.com/u/65010677?v=4",
+    desc: "林俊杰（JJ Lin），1981年3月27日出生于新加坡，祖籍中国福建省厦门市同安区，华语流行乐男歌手、音乐人、潮牌主理人。",
+  },
+  {
+    id: 3,
+    name: "林俊杰",
+    head_url:
+      "https://avatars.githubusercontent.com/u/65010677?v=4",
+    desc: "林俊杰（JJ Lin），1981年3月27日出生于新加坡，祖籍中国福建省厦门市同安区，华语流行乐男歌手、音乐人、潮牌主理人。",
+  },
 ];
 const HomeLayout = () => {
   return (

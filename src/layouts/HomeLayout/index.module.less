@@ -1,7 +1,8 @@
 .container {
   display: flex;
+  overflow: hidden;
   .left {
-    width: 20%;
+    width: 310px;
     display: flex;
     flex-direction: column;
     header {
@@ -11,7 +12,7 @@
     section {
       height: calc(100vh - 44px);
       background-color: #24282a;
-      overflow-x: auto;
+      overflow-y: auto;
       .tabs {
         position: sticky;
         top: 0;
@@ -31,7 +32,7 @@
     }
   }
   .content {
-    width: 80%;
+    flex: 1;
     background-color: #33373a;
   }
 }

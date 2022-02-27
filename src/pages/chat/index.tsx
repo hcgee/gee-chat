@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { FriendObjectProps, ChatRecordObjectProps } from "@/interface";
 import ChatRecord from "@/components/ChatRecord";
+import BreadCrumbs from "@/components/BreadCrumbs";
 import styles from "./index.module.less";
 const friendList: FriendObjectProps[] = [
   {
@@ -89,6 +90,30 @@ const chatRecordList: ChatRecordObjectProps[] = [
     content: "我喜欢你!",
     sendTime: "2022-02-26 00:25:00",
   },
+  {
+    id: 8,
+    name: "欧文",
+    isme: true,
+    head_url: "https://avatars.githubusercontent.com/u/65010677?v=4",
+    content: "我喜欢你!",
+    sendTime: "2022-02-26 00:25:00",
+  },
+  {
+    id: 8,
+    name: "欧文",
+    isme: true,
+    head_url: "https://avatars.githubusercontent.com/u/65010677?v=4",
+    content: "我喜欢你!",
+    sendTime: "2022-02-26 00:25:00",
+  },
+  {
+    id: 8,
+    name: "欧文",
+    isme: true,
+    head_url: "https://avatars.githubusercontent.com/u/65010677?v=4",
+    content: "我喜欢你!",
+    sendTime: "2022-02-26 00:25:00",
+  },
 ];
 const Chat = () => {
   let { id } = useParams();
@@ -104,11 +129,14 @@ const Chat = () => {
   }, [id]);
   return (
     <div className={styles.chat}>
-      <h1 className={styles.name}>{data.name}</h1>
+      <BreadCrumbs title={data.name} />
       <div className={styles.chatarea}>
         {chatRecordList.map((record) => (
           <ChatRecord data={record} key={record.id} />
         ))}
+      </div>
+      <div className={styles.sendMsgArea}>
+        <textarea></textarea>
       </div>
     </div>
   );

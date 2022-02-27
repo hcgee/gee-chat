@@ -17,12 +17,12 @@ code {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
-  background-color: #ddd;
+  width: 4px;
+  background-color: #33373a;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #b8c7c6;
+  background-color: #cbd0d0;
   border-radius: 10px;
 }

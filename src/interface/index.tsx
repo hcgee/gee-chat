@@ -20,3 +20,11 @@ export interface ChatRecordObjectProps {
   content: string;
   sendTime: string;
 }
+
+/**
+ * 面包屑
+ */
+
+export interface BreadCrumbsProps {
+  title: string;
+}

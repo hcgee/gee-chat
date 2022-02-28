@@ -136,7 +136,12 @@ const Chat = () => {
         ))}
       </div>
       <div className={styles.sendMsgArea}>
-        <textarea></textarea>
+        <textarea onKeyDown={(e)=> {
+          if(e.key==='Enter'){
+            e.preventDefault()
+            console.log(e.key);
+          }
+        }} placeholder="Enter发送，Shift+Enter换行"></textarea>
       </div>
     </div>
   );

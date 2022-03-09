@@ -1,3 +1,9 @@
+/*
+ * @Author: huhanchi 
+ * @Date: 2022-03-09 22:51:36 
+ * @Last Modified by:   huhanchi 
+ * @Last Modified time: 2022-03-09 22:51:36 
+ */
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { FriendObjectProps, ChatRecordObjectProps } from "@/interface";

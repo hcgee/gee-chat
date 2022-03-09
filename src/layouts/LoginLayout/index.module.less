@@ -1,41 +1,63 @@
+/*
+ * @Author: huhanchi 
+ * @Date: 2022-03-09 22:51:47 
+ * @Last Modified by:   huhanchi 
+ * @Last Modified time: 2022-03-09 22:51:47 
+ */
 .app {
-  text-align: center;
-  // background-color: #000;
-  .app-header {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    input {
-      text-align: center;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      padding: 4px 8px;
+  height: 100vh;
+  background-color: #33373a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  form {
+    width: 25%;
+    min-width: 384px;
+    height: 60%;
+    min-height: 428px;
+    background-color: #2d8059;
+    border-radius: 40px;
+    text-align: center;
+    /* 然后设置为背面朝向用户时不可见 */
+    backface-visibility: hidden;
+    transition: 0.5s linear;
+    h1 {
+      color: #c2cbd2;
+      font-size: calc(16px + 1vmin);
+    }
+    .loginBtn {
+      padding-bottom: 60px;
+    }
+    p {
       font-size: calc(10px + 1vmin);
-      margin-bottom: 20px;
-      transition: 500ms all;
-      &::placeholder {
-        color: #ddd;
-        font-size: calc(10px + 1vmin);
-      }
-      &:hover {
-        border: 1px solid yellow;
-      }
-      &:focus-visible {
-        outline: none;
-        border: 1px solid yellow;
-        box-shadow: 0 0 2px yellow;
+      color: #fff;
+      a {
+        cursor: pointer;
+        color: skyblue;
       }
     }
   }
-  .app-logo {
-    height: 20vmin;
-    pointer-events: none;
+  .rotate360 {
+    transform: rotateY(360deg);
   }
-  .app-link {
-    color: #61dafb;
+  input {
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 4px 8px;
     font-size: calc(10px + 1vmin);
+    margin-bottom: 30px;
+    &::placeholder {
+      color: #ddd;
+      font-size: calc(10px + 1vmin);
+    }
+    &:hover {
+      // border: 1px solid yellow;
+    }
+    &:focus-visible {
+      outline: none;
+      border: 1px solid yellow;
+      // box-shadow: 0 0 2px yellow;
+    }
   }
 }

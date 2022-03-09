@@ -1,3 +1,9 @@
+/*
+ * @Author: huhanchi 
+ * @Date: 2022-03-09 22:51:52 
+ * @Last Modified by:   huhanchi 
+ * @Last Modified time: 2022-03-09 22:51:52 
+ */
 import React, { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import SearchComp from "@/components/SearchComp";

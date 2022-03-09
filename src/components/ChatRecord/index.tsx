@@ -1,3 +1,9 @@
+/*
+ * @Author: huhanchi 
+ * @Date: 2022-03-09 22:52:18 
+ * @Last Modified by:   huhanchi 
+ * @Last Modified time: 2022-03-09 22:52:18 
+ */
 import React from "react";
 import { ChatRecordObjectProps } from "@/interface";
 import styles from "./index.module.less";

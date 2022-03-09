@@ -1,3 +1,9 @@
+/*
+ * @Author: huhanchi 
+ * @Date: 2022-03-09 22:52:13 
+ * @Last Modified by:   huhanchi 
+ * @Last Modified time: 2022-03-09 22:52:13 
+ */
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { FriendObjectProps } from "@/interface";

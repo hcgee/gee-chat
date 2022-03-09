@@ -1,3 +1,9 @@
+/*
+ * @Author: huhanchi 
+ * @Date: 2022-03-09 22:51:20 
+ * @Last Modified by:   huhanchi 
+ * @Last Modified time: 2022-03-09 22:51:20 
+ */
 import { lazy } from "react";
 import { RouteObject } from "react-router-dom";
 const LoginLayout = lazy(() => import("@/layouts/LoginLayout"));

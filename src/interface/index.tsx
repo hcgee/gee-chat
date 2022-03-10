@@ -1,16 +1,16 @@
 /*
  * @Author: huhanchi 
  * @Date: 2022-03-09 22:51:56 
- * @Last Modified by:   huhanchi 
- * @Last Modified time: 2022-03-09 22:51:56 
+ * @Last Modified by: huhanchi
+ * @Last Modified time: 2022-03-10 21:24:22
  */
 /**
  * 好友
  */
 export interface FriendObjectProps {
-  id: number | string;
-  name: string;
-  head_url: string;
+  user_id: number | string;
+  nickname: string;
+  head: string;
   desc: string;
 }
 
@@ -20,7 +20,7 @@ export interface FriendObjectProps {
 
 export interface ChatRecordObjectProps {
   id: number | string;
-  name: string;
+  nickname: string;
   isme: boolean;
   head_url: string;
   content: string;

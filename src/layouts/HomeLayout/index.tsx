@@ -1,109 +1,82 @@
 /*
- * @Author: huhanchi 
- * @Date: 2022-03-09 22:51:52 
- * @Last Modified by:   huhanchi 
- * @Last Modified time: 2022-03-09 22:51:52 
+ * @Author: huhanchi
+ * @Date: 2022-03-09 22:51:52
+ * @Last Modified by: huhanchi
+ * @Last Modified time: 2022-03-10 21:52:53
  */
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import SearchComp from "@/components/SearchComp";
+import { useNavigate } from "react-router-dom";
 import Friend from "@/components/Friend";
-import styles from "./index.module.less";
 import { FriendObjectProps } from "@/interface";
-const friendList: FriendObjectProps[] = [
-  {
-    id: 1,
-    name: "欧文",
-    head_url:
-      "https://avatars.githubusercontent.com/u/65010677?v=4",
-    desc: "凯里·欧文（Kyrie Irving），全名凯里·安德鲁·欧文（Kyrie Andrew Irving），1992年3月23日出生于澳大利亚墨尔本，拥有美国/澳大利亚双重国籍，美国职业篮球运动员，司职控球后卫，效力于NBA布鲁克林篮网队。",
-  },
-  {
-    id: 2,
-    name: "詹姆斯",
-    head_url:
-      "https://avatars.githubusercontent.com/u/65010677?v=4",
-    desc: "勒布朗·詹姆斯（LeBron James），全名勒布朗·雷蒙·詹姆斯（LeBron Raymone James），1984年12月30日出生于美国俄亥俄州阿克伦，美国职业篮球运动员，司职小前锋，绰号“国王詹姆斯（King James）”，效力于NBA洛杉矶湖人队。",
-  },
-  {
-    id: 3,
-    name: "林俊杰",
-    head_url:
-      "https://avatars.githubusercontent.com/u/65010677?v=4",
-    desc: "林俊杰（JJ Lin），1981年3月27日出生于新加坡，祖籍中国福建省厦门市同安区，华语流行乐男歌手、音乐人、潮牌主理人。",
-  },
-  {
-    id: 3,
-    name: "林俊杰",
-    head_url:
-      "https://avatars.githubusercontent.com/u/65010677?v=4",
-    desc: "林俊杰（JJ Lin），1981年3月27日出生于新加坡，祖籍中国福建省厦门市同安区，华语流行乐男歌手、音乐人、潮牌主理人。",
-  },
-  {
-    id: 3,
-    name: "林俊杰",
-    head_url:
-      "https://avatars.githubusercontent.com/u/65010677?v=4",
-    desc: "林俊杰（JJ Lin），1981年3月27日出生于新加坡，祖籍中国福建省厦门市同安区，华语流行乐男歌手、音乐人、潮牌主理人。",
-  },
-  {
-    id: 3,
-    name: "林俊杰",
-    head_url:
-      "https://avatars.githubusercontent.com/u/65010677?v=4",
-    desc: "林俊杰（JJ Lin），1981年3月27日出生于新加坡，祖籍中国福建省厦门市同安区，华语流行乐男歌手、音乐人、潮牌主理人。",
-  },
-  {
-    id: 3,
-    name: "林俊杰",
-    head_url:
-      "https://avatars.githubusercontent.com/u/65010677?v=4",
-    desc: "林俊杰（JJ Lin），1981年3月27日出生于新加坡，祖籍中国福建省厦门市同安区，华语流行乐男歌手、音乐人、潮牌主理人。",
-  },
-  {
-    id: 3,
-    name: "林俊杰",
-    head_url:
-      "https://avatars.githubusercontent.com/u/65010677?v=4",
-    desc: "林俊杰（JJ Lin），1981年3月27日出生于新加坡，祖籍中国福建省厦门市同安区，华语流行乐男歌手、音乐人、潮牌主理人。",
-  },
-  {
-    id: 3,
-    name: "林俊杰",
-    head_url:
-      "https://avatars.githubusercontent.com/u/65010677?v=4",
-    desc: "林俊杰（JJ Lin），1981年3月27日出生于新加坡，祖籍中国福建省厦门市同安区，华语流行乐男歌手、音乐人、潮牌主理人。",
-  },
-  {
-    id: 3,
-    name: "林俊杰",
-    head_url:
-      "https://avatars.githubusercontent.com/u/65010677?v=4",
-    desc: "林俊杰（JJ Lin），1981年3月27日出生于新加坡，祖籍中国福建省厦门市同安区，华语流行乐男歌手、音乐人、潮牌主理人。",
-  },
-  {
-    id: 3,
-    name: "林俊杰",
-    head_url:
-      "https://avatars.githubusercontent.com/u/65010677?v=4",
-    desc: "林俊杰（JJ Lin），1981年3月27日出生于新加坡，祖籍中国福建省厦门市同安区，华语流行乐男歌手、音乐人、潮牌主理人。",
-  },
-  {
-    id: 3,
-    name: "林俊杰",
-    head_url:
-      "https://avatars.githubusercontent.com/u/65010677?v=4",
-    desc: "林俊杰（JJ Lin），1981年3月27日出生于新加坡，祖籍中国福建省厦门市同安区，华语流行乐男歌手、音乐人、潮牌主理人。",
-  },
-  {
-    id: 3,
-    name: "林俊杰",
-    head_url:
-      "https://avatars.githubusercontent.com/u/65010677?v=4",
-    desc: "林俊杰（JJ Lin），1981年3月27日出生于新加坡，祖籍中国福建省厦门市同安区，华语流行乐男歌手、音乐人、潮牌主理人。",
-  },
-];
+import { getLocalStorage, clearLocalStorage } from "@/utils";
+import axios from "axios";
+import styles from "./index.module.less";
+
+type Param = {
+  condition: string;
+  status: number;
+  pageSize: number;
+  pageNo: number;
+};
 const HomeLayout = () => {
+  const token = getLocalStorage("token");
+  const username = getLocalStorage("username");
+  const navigate = useNavigate();
+  const [param, setParam] = useState<Param>({
+    condition: "",
+    status: 0,
+    pageSize: 10,
+    pageNo: 1,
+  });
+  const [list, setList] = useState<FriendObjectProps[]>([]);
+  useEffect(() => {
+    if (!token) {
+      navigate("/login");
+    } else {
+      getList(param);
+    }
+  }, []);
+
+  // 退出登录
+  const logout = () => {
+    axios
+      .post(
+        "/api/user/logout",
+        { username },
+        {
+          headers: {
+            token: token,
+          },
+        }
+      )
+      .then((res) => {
+        if (res.data.code === 200) {
+          clearLocalStorage();
+          navigate("/login");
+        } else {
+          alert(res.data.msg);
+        }
+      });
+  };
+
+  // 获取好友列表
+  const getList = (param: Param) => {
+    axios
+      .post("/api/user/getUser", param, {
+        headers: {
+          token: token,
+        },
+      })
+      .then((res) => {
+        if (res.data.code === 200) {
+          setList(res.data.data);
+        } else {
+          alert(res.data.msg);
+        }
+      });
+  };
   return (
     <div className={styles.container}>
       <div className={styles.left}>
@@ -116,12 +89,15 @@ const HomeLayout = () => {
             <div className={styles.tab}> 在线</div>
             <div className={styles.tab}>不在线</div>
           </div>
-          {friendList.map((friend) => (
-            <Friend key={friend.id} data={friend} />
+          {list.map((friend) => (
+            <Friend key={friend.user_id} data={friend} />
           ))}
         </section>
       </div>
       <div className={styles.content}>
+        <div onClick={() => logout()} className={styles.logout}>
+          <a>退出</a>
+        </div>
         <Suspense fallback={<div>loading...</div>}>
           <Outlet />
         </Suspense>

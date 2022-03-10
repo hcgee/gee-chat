@@ -1,13 +1,14 @@
 /*
- * @Author: huhanchi 
- * @Date: 2022-03-09 22:51:12 
- * @Last Modified by:   huhanchi 
- * @Last Modified time: 2022-03-09 22:51:12 
+ * @Author: huhanchi
+ * @Date: 2022-03-09 22:51:12
+ * @Last Modified by: huhanchi
+ * @Last Modified time: 2022-03-10 21:42:25
  */
+
 /**
  * 获取缓存
- * @param key 
- * @returns 
+ * @param key
+ * @returns
  */
 export const getLocalStorage = (key: string) => {
   return localStorage.getItem(key);
@@ -15,9 +16,16 @@ export const getLocalStorage = (key: string) => {
 
 /**
  * 设置缓存
- * @param key 
- * @param value 
+ * @param key
+ * @param value
  */
 export const setLocalStorage = (key: string, value: any) => {
   localStorage.setItem(key, value);
+};
+
+/**
+ * 清除缓存
+ */
+export const clearLocalStorage = () => {
+  localStorage.clear()
 };

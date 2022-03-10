@@ -1,8 +1,8 @@
 /*
- * @Author: huhanchi 
- * @Date: 2022-03-09 22:52:13 
+ * @Author: huhanchi
+ * @Date: 2022-03-09 22:52:13
  * @Last Modified by: huhanchi
- * @Last Modified time: 2022-03-10 21:18:03
+ * @Last Modified time: 2022-03-10 22:01:56
  */
 import React from "react";
 import { useNavigate } from "react-router-dom";
@@ -16,11 +16,14 @@ const Friend: React.FC<FriendDataProps> = (props) => {
   const navigate = useNavigate();
   const { data } = props;
 
-  const gotoFriendChat = (id: number | string) => {
-    navigate(`/chat/${id}`);
+  const gotoFriendChat = (id: number | string, name: string) => {
+    navigate(`/chat/${id}/${name}`);
   };
   return (
-    <div onClick={() => gotoFriendChat(data.user_id)} className={styles.friend}>
+    <div
+      onClick={() => gotoFriendChat(data.user_id, data.nickname)}
+      className={styles.friend}
+    >
       <img src={data.head} alt="" />
       <div className={styles.friendLeft}>
         <div className={styles.friendName}>{data.nickname}</div>

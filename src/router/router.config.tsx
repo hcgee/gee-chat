@@ -1,8 +1,8 @@
 /*
  * @Author: huhanchi 
  * @Date: 2022-03-09 22:51:20 
- * @Last Modified by:   huhanchi 
- * @Last Modified time: 2022-03-09 22:51:20 
+ * @Last Modified by: huhanchi
+ * @Last Modified time: 2022-03-10 22:03:08
  */
 import { lazy } from "react";
 import { RouteObject } from "react-router-dom";
@@ -25,7 +25,7 @@ const routes: RouteObject[] = [
         element: <Home />,
       },
       {
-        path: "/chat/:id",
+        path: "/chat/:id/:name",
         element: <Chat />,
       },
     ],

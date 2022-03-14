@@ -2,7 +2,7 @@
  * @Author: huhanchi
  * @Date: 2022-03-09 22:51:52
  * @Last Modified by: huhanchi
- * @Last Modified time: 2022-03-10 21:52:53
+ * @Last Modified time: 2022-03-14 22:53:32
  */
 import React, { Suspense, useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
@@ -11,8 +11,24 @@ import { useNavigate } from "react-router-dom";
 import Friend from "@/components/Friend";
 import { FriendObjectProps } from "@/interface";
 import { getLocalStorage, clearLocalStorage } from "@/utils";
-import axios from "axios";
+// import axios from "axios";
+import axios from "@/utils/request";
 import styles from "./index.module.less";
+
+const tabs = [
+  {
+    key: -1,
+    value: "全部",
+  },
+  {
+    key: 1,
+    value: "在线",
+  },
+  {
+    key: 0,
+    value: "不在线",
+  },
+];
 
 type Param = {
   condition: string;
@@ -26,10 +42,11 @@ const HomeLayout = () => {
   const navigate = useNavigate();
   const [param, setParam] = useState<Param>({
     condition: "",
-    status: 0,
+    status: -1,
     pageSize: 10,
     pageNo: 1,
   });
+  const [activeKey, setActiveKey] = useState(-1); // tabs active key
   const [list, setList] = useState<FriendObjectProps[]>([]);
   useEffect(() => {
     if (!token) {
@@ -37,7 +54,7 @@ const HomeLayout = () => {
     } else {
       getList(param);
     }
-  }, []);
+  }, [param]);
 
   // 退出登录
   const logout = () => {
@@ -77,21 +94,51 @@ const HomeLayout = () => {
         }
       });
   };
+
+  // 切换tab
+  const tabOnChange = async (key: number) => {
+    const params = {
+      ...param,
+      status: key,
+    };
+    setParam(params);
+    setActiveKey(key);
+  };
   return (
     <div className={styles.container}>
       <div className={styles.left}>
         <header>
-          <SearchComp />
+          <SearchComp
+            condition={param.condition}
+            onChange={(value) =>
+              setParam((param) => {
+                return {
+                  ...param,
+                  condition: value,
+                };
+              })
+            }
+          />
         </header>
         <section>
           <div className={styles.tabs}>
-            <div className={styles.tab}>全部</div>
-            <div className={styles.tab}> 在线</div>
-            <div className={styles.tab}>不在线</div>
+            {tabs.map((tab) => (
+              <div
+                onClick={() => tabOnChange(tab.key)}
+                style={
+                  activeKey === tab.key
+                    ? { color: "#fff", backgroundColor: "#0170fe" }
+                    : {}
+                }
+                key={tab.key}
+                className={styles.tab}
+              >
+                {tab.value}
+              </div>
+            ))}
           </div>
-          {list.map((friend) => (
-            <Friend key={friend.user_id} data={friend} />
-          ))}
+          {list.length > 0 &&
+            list.map((friend) => <Friend key={friend.user_id} data={friend} />)}
         </section>
       </div>
       <div className={styles.content}>

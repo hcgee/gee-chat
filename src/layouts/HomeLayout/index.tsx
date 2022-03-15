@@ -2,7 +2,7 @@
  * @Author: huhanchi
  * @Date: 2022-03-09 22:51:52
  * @Last Modified by: huhanchi
- * @Last Modified time: 2022-03-14 22:53:32
+ * @Last Modified time: 2022-03-15 21:25:09
  */
 import React, { Suspense, useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
@@ -91,8 +91,20 @@ const HomeLayout = () => {
           setList(res.data.data);
         } else {
           alert(res.data.msg);
+          clearLocalStorage()
+          navigate("/login");
         }
       });
+  };
+
+  // 输入搜索条件事件
+  const conditionChange = (value: string) => {
+    setParam((param) => {
+      return {
+        ...param,
+        condition: value,
+      };
+    });
   };
 
   // 切换tab
@@ -110,14 +122,7 @@ const HomeLayout = () => {
         <header>
           <SearchComp
             condition={param.condition}
-            onChange={(value) =>
-              setParam((param) => {
-                return {
-                  ...param,
-                  condition: value,
-                };
-              })
-            }
+            onChange={(value) => conditionChange(value)}
           />
         </header>
         <section>

@@ -2,7 +2,7 @@
  * @Author: huhanchi
  * @Date: 2022-03-09 22:52:13
  * @Last Modified by: huhanchi
- * @Last Modified time: 2022-03-10 22:01:56
+ * @Last Modified time: 2022-03-15 21:15:45
  */
 import React from "react";
 import { useNavigate } from "react-router-dom";
@@ -24,8 +24,19 @@ const Friend: React.FC<FriendDataProps> = (props) => {
       onClick={() => gotoFriendChat(data.user_id, data.nickname)}
       className={styles.friend}
     >
-      <img src={data.head} alt="" />
       <div className={styles.friendLeft}>
+        <img
+          className={styles.headicon}
+          style={data.status === 1 ? {} : { filter: "grayscale(100%)" }}
+          src={data.head}
+          alt=""
+        />
+        <div
+          style={{ backgroundColor: data.status === 1 ? "#3fe73f" : "gray" }}
+          className={styles.statustag}
+        ></div>
+      </div>
+      <div className={styles.friendRight}>
         <div className={styles.friendName}>{data.nickname}</div>
         <div className={styles.friendDesc}>{data.desc}</div>
       </div>

@@ -1,23 +1,37 @@
 /*
  * @Author: huhanchi 
  * @Date: 2022-03-09 22:52:10 
- * @Last Modified by:   huhanchi 
- * @Last Modified time: 2022-03-09 22:52:10 
+ * @Last Modified by: huhanchi
+ * @Last Modified time: 2022-03-15 21:02:53
  */
 .friend {
   display: flex;
   cursor: pointer;
   padding: 12px;
+
   &:hover {
     background-color: #474444;
   }
-  img {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
+
   .friendLeft {
+    position: relative;
+    .headicon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .statustag {
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+  }
+
+  .friendRight {
     flex: 1;
     display: flex;
     flex-direction: column;
